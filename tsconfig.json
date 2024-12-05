@@ -20,7 +20,13 @@
     ],
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "noImplicitAny": true,                     // Disallow 'any' type
+    "strictNullChecks": true,                  // Ensure null/undefined are handled
+    "noUnusedLocals": true,                    // Report unused local variables
+    "noUnusedParameters": true,                // Report unused parameters
+    "noImplicitReturns": true,                 // Ensure consistent return statements
+    "noFallthroughCasesInSwitch": true 
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
