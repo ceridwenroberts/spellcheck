@@ -1,10 +1,14 @@
 'use client'
 
-import type { Metadata } from "next";
+// import type { Metadata } from "next";
 import localFont from "next/font/local";
 import {metadata }from "@/lib/metadata"
 import { SpellsProvider } from "@/contexts/SpellsContext";
 import "./globals.css";
+
+// interface RootLayoutProps {
+//   children: ReactNode;
+// }
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -62,7 +66,7 @@ export default function RootLayout({
         ))}
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} ${magicSchool.variable} ${aquilineTwo.variable} ${lumos.variable}`}>
-        <SpellsProvider>{children}</SpellsProvider>
+        <SpellsProvider>{children}: React.ReactNode</SpellsProvider>
       </body>
     </html>
   );

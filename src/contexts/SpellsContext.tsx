@@ -75,7 +75,7 @@ export const SpellsProvider = ({children}) => {
     )
 }
 
-export const useSpells = () => {
+export const useSpells = (): SpellsContextType => {
     const context = useContext(SpellsContext);
     if (!context) {
         throw new Error("useSpells must be used within a SpellsProvider");
