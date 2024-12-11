@@ -1,0 +1,23 @@
+.spellList {
+  &__initialContainer {
+    padding: 48px;
+    // position: relative;
+    display: flex;
+    flex-direction: column;
+
+    & h3 {
+      font-family: var(--font-aquilinetwo);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-size: 48px;
+    }
+  }
+
+  &__incantationContainer {
+    display: inline;
+
+    & p {
+      display: inline-block;
+    }
+  }
+}
