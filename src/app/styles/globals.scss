@@ -5,6 +5,7 @@
 @use "_Page";
 @use "_Header";
 @use "_Navbar";
+@use "_SpellList";
 
 // $lumos: 'Lumos', sans-serif;
 // $magicSchool: 'MagicSchool', sans-serif;
@@ -136,29 +137,29 @@ body {
 
 // }
 
-.lexico-container {
-  padding: 48px;
-  // position: relative;
-  display: flex;
-  flex-direction: column;
+// .lexico-container {
+//   padding: 48px;
+//   // position: relative;
+//   display: flex;
+//   flex-direction: column;
 
-  & h3 {
-    font-family: var(--font-aquilinetwo);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-size: 48px;
-  }
-}
+//   & h3 {
+//     font-family: var(--font-aquilinetwo);
+//     -webkit-font-smoothing: antialiased;
+//     -moz-osx-font-smoothing: grayscale;
+//     font-size: 48px;
+//   }
+// }
 
-.incantation-container {
-  // outline: auto;
-  display: inline;
+// .incantation-container {
+//   // outline: auto;
+//   display: inline;
 
-  & p {
-    display: inline-block;
-    outline: auto;
-  }
-}
+//   & p {
+//     display: inline-block;
+//     outline: auto;
+//   }
+// }
 
 .modal {
   display: flex;

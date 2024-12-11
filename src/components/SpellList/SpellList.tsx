@@ -40,10 +40,10 @@ const SpellList = () => {
                 .sort()
                 .map(
                     (letter: string) => (
-                        <div key={ letter } id={ letter } className="lexico-container">
+                        <div key={ letter } id={ letter } className="spellList__initialContainer">
                             <h3>{ letter }</h3>
                             { Array.isArray(spellsByLetter[letter]) && spellsByLetter[letter].map((spell: Spell) => (
-                                <div className="incantation-container" key={ spell.id } onClick={ () => handleModalOpen(spell) }>
+                                <div className="spellList__incantationContainer" key={ spell.id } onClick={ () => handleModalOpen(spell) }>
                                     <p>{ spell.incantation }</p>
                                 </div>
                             )) }
