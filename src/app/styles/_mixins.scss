@@ -1,0 +1,50 @@
+@mixin reset-button-styles {
+  button,
+  input[type="button"],
+  input[type="submit"] {
+    all: unset; // Reset all inherited and browser styles
+    display: inline-block; // Ensures the button behaves as a block-inline element
+    cursor: pointer; // Adds a pointer cursor for better UX
+    text-align: center; // Centers text inside the button
+    background-color: transparent; // No background by default
+    border: none; // Removes borders
+    padding: 0; // Resets padding
+    margin: 0; // Resets margin
+    font: inherit; // Inherit font styles from parent
+    color: inherit; // Inherit text color
+    line-height: inherit; // Ensures consistent line height
+    user-select: none; // Prevent text selection
+    appearance: none; // Removes platform-specific styling
+    -webkit-appearance: none; // Cross-browser compatibility
+    -moz-appearance: none; // Cross-browser compatibility
+    box-shadow: none; // Removes any default shadow
+
+    &:focus {
+      outline: none; // Prevent default focus outline
+    }
+
+    &:disabled {
+      cursor: not-allowed; // Shows a disabled cursor
+      opacity: 0.6; // Gives visual feedback for disabled state
+    }
+  }
+}
+
+@mixin reset-anchorlink-styles {
+  a {
+    color: inherit; /* Inherit the color from the parent element */
+    text-decoration: none; /* Remove underline */
+
+    &[href] {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    &:not([href]) {
+      color: inherit;
+      text-decoration: none;
+      cursor: default; /* Optional: Change the cursor to indicate non-clickable */
+      opacity: 0.5;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+// @use "colors.scss";
+@use "variables";
+
+a {
+    color: inherit;/* Inherit the color from the parent element */
+        text-decoration: none; /* Remove underline */
+        text-align: right;
+      
+      
+      &[href] {
+        text-decoration: none;
+      }
+      
+      &:not([href]) {
+        
+        color: variables.$clr-no-link; /* Style for elements without an href attribute */
+        text-decoration: none;
+        cursor: default; /* Optional: Change the cursor to indicate non-clickable */
+      }
+}
+      // .noLink {
+      //   color: colors.$clr-no-link;
+      //   cursor: not-allowed;
+      //   pointer-events: none;
+      //   opacity: 0.5;
+      // }
+    

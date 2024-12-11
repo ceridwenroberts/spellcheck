@@ -1,0 +1,11 @@
+@use "variables";
+
+.page {
+  // outline: auto;
+
+  gap: 32px;
+  max-width: 1100px;
+  margin: auto;
+  background-color: variables.$bg-color2;
+  
+}
