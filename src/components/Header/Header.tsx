@@ -1,8 +1,11 @@
-const Header = () => {
-    console.log("header")
+import {ComponentStyleProps} from "@/utils/types/ComponentStyleProps"
+const Header = ({className}: ComponentStyleProps) => {
+    // console.log("header")
 
     return(
-        <h1>Spellcheck</h1>
+        <div className={`header ${className}`}>
+            <h1><span className="initialCapital">S</span>pellcheck</h1>
+        </div>
     )
 }
 

@@ -4,7 +4,7 @@
 import localFont from "next/font/local";
 import {metadata }from "@/lib/metadata"
 import { SpellsProvider } from "@/contexts/SpellsContext";
-import "./globals.css";
+import "./styles/globals.scss";
 
 // interface RootLayoutProps {
 //   children: ReactNode;
@@ -52,7 +52,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-           <head>
+      <head>
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
         {metadata.icons.map((icon, index) => (
@@ -66,7 +66,7 @@ export default function RootLayout({
         ))}
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} ${magicSchool.variable} ${aquilineTwo.variable} ${lumos.variable}`}>
-        <SpellsProvider>{children}: React.ReactNode</SpellsProvider>
+        <SpellsProvider>{children}</SpellsProvider>
       </body>
     </html>
   );

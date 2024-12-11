@@ -22,12 +22,24 @@
       "@/*": ["./src/*"]
     },
     "noImplicitAny": true,                     // Disallow 'any' type
+    "noImplicitThis": true, 
     "strictNullChecks": true,                  // Ensure null/undefined are handled
     "noUnusedLocals": true,                    // Report unused local variables
     "noUnusedParameters": true,                // Report unused parameters
     "noImplicitReturns": true,                 // Ensure consistent return statements
-    "noFallthroughCasesInSwitch": true 
+    "noFallthroughCasesInSwitch": true ,
+    "alwaysStrict": true
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
 }
+
+  // "noUnusedLocals": true, // Disallow unused locals
+  //   "noUnusedParameters": true, // Disallow unused parameters
+  //   "noFallthroughCasesInSwitch": true, // Prevent fall-through in switch
+  //   "noUncheckedSideEffectImports": true, // Disallow unchecked side-effect imports,
+  //   "noImplicitAny": true,         // Warns when a variable has an `any` type (which means no type is assigned)
+  //   "noImplicitThis": true,        // Warns when `this` is used in a non-typed way
+  //   "strictNullChecks": true,      // Makes `null` and `undefined` check strict (more accurate type checking)
+  //   "alwaysStrict": true           // Enforces strict mode parsing in every file
+  // }

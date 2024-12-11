@@ -4,7 +4,7 @@ import { createContext,
     useState } from 'react'
 
    
-interface Spell {
+export interface Spell {
     id: string,
     name: string,
     incantation: string,
@@ -15,6 +15,9 @@ interface Spell {
     creator: string
 }
 
+interface SpellsProviderProps{
+    children: React.ReactNode;
+}
 interface SpellsContextType {
     spells: Spell[],
     spellsByLetter: Record<string, Spell[]>
@@ -22,7 +25,7 @@ interface SpellsContextType {
 
 const SpellsContext = createContext<SpellsContextType | undefined>(undefined);
 
-export const SpellsProvider = ({children}) => {
+export const SpellsProvider= ({children}: SpellsProviderProps) => {
     const [spells, setSpells] = useState<Spell[]>([]);
     const [spellsByLetter, setSpellsByLetter] = useState<Record<string, Spell[]>>({});
 
@@ -61,12 +64,14 @@ export const SpellsProvider = ({children}) => {
 
             }, {});
             setSpellsByLetter(groupedSpells)
+            
         }
-        
+      
+
     }, [spells]);
 
     // console.log(spells);
-    console.log("spells by letter", spellsByLetter)
+    // console.log("spells by letter", spellsByLetter)
 
     return(
        <SpellsContext.Provider value={{spells, spellsByLetter}}>

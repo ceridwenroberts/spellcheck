@@ -34,3 +34,30 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
+   <>
+          { Object.keys(spellsByLetter)
+              .sort()
+              .map(
+                  (letter: string) =>(
+                  <div key={ letter } id={ letter } className="byLetterContainer">
+                      <h3>{ letter }</h3>
+                          { Array.isArray(spellsByLetter[letter]) && spellsByLetter[letter].map((spell: Spell) => (
+                              <div key={ spell.id }>
+                                  <p>{ spell.incantation }</p>
+                              </div>
+                  )) }
+          <div>
+            { showModal &&
+            selectedSpell &&
+            createPortal(
+                <SpellCard spell={selectedSpell} onClose={handleModalClose} />, document.body
+
+            )
+              }
+              </div>
+                ))
+    }
+    </>
+  );
