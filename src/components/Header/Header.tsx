@@ -4,7 +4,7 @@ const Header = ({className}: ComponentStyleProps) => {
 
     return(
         <div className={`header ${className}`}>
-            <h1><span className="initialCapital">S</span>pellcheck</h1>
+            <h1><span className="header__initialCapital">S</span>pellcheck</h1>
         </div>
     )
 }

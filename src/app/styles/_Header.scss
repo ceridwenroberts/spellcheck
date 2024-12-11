@@ -1,11 +1,28 @@
 @use "variables";
 
-.page {
-  // outline: auto;
+.header {
+  display: flex;
+  font-family: variables.$aquilineTwo;
+  justify-content: center;
 
-  gap: 32px;
-  max-width: 1100px;
-  margin: auto;
-  background-color: variables.$bg-color2;
-  
+  //?
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  & h1 {
+    font-size: 4rem;
+    //dispaly: inline-block
+    // transform: rotate(-4deg);
+  }
+
+  &__initialCapital {
+    font-family: var(--font-aquilinetwo), Helvetica, cursive;
+  font-size: 7rem;
+  position: relative;
+  top: 14%;
+  margin-right: 2%;
+  font-weight: 600;
+  line-height: 0;
+  letter-spacing: -0.06em;
+}
 }

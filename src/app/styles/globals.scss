@@ -2,7 +2,8 @@
 @use "_reset_basic";
 @use "_reset_anchorlinks";
 @use "_reset_buttons";
-@use "_Page.scss";
+@use "_Page";
+@use "_Header";
 @use "_Navbar";
 
 // $lumos: 'Lumos', sans-serif;
@@ -83,37 +84,37 @@ body {
   
 // }
 
-.header {
-  display: flex;
-  font-family: variables.$aquilineTwo;
-  justify-content: center;
+// .header {
+//   display: flex;
+//   font-family: variables.$aquilineTwo;
+//   justify-content: center;
 
-  //?
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+//   //?
+//   -webkit-font-smoothing: antialiased;
+//   -moz-osx-font-smoothing: grayscale;
 
-  & h1 {
-    font-size: 4rem;
-    //dispaly: inline-block
-    // transform: rotate(-4deg);
-  }
-}
+//   & h1 {
+//     font-size: 4rem;
+//     //dispaly: inline-block
+//     // transform: rotate(-4deg);
+//   }
+// }
 
-main {
-  // display: flex;
-  flex-direction: column;
-}
+// main {
+//   // display: flex;
+//   // flex-direction: column;
+// }
 
-.initialCapital {
-  font-family: var(--font-aquilinetwo), Helvetica, cursive;
-  font-size: 7rem;
-  position: relative;
-  top: 14%;
-  margin-right: 2%;
-  font-weight: 600;
-  line-height: 0;
-  letter-spacing: -0.06em;
-}
+// .initialCapital {
+//   font-family: var(--font-aquilinetwo), Helvetica, cursive;
+//   font-size: 7rem;
+//   position: relative;
+//   top: 14%;
+//   margin-right: 2%;
+//   font-weight: 600;
+//   line-height: 0;
+//   letter-spacing: -0.06em;
+// }
 
 // nav {
 //   display: flex;
