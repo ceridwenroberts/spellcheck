@@ -1,0 +1,35 @@
+$transition-duration: 2s;
+$delay-step: 0.4s;
+
+.smokey {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  // justify-content: center;
+  gap: 0.25rem;
+
+  li {
+    transition: transform $transition-duration, opacity $transition-duration, filter $transition-duration;
+    -webkit-transition: transform $transition-duration, opacity $transition-duration, filter $transition-duration;
+    -moz-transition: transform $transition-duration, opacity $transition-duration, filter $transition-duration;
+    -ms-transition: transform $transition-duration, opacity $transition-duration, filter $transition-duration;
+    -o-transition: transform $transition-duration, opacity $transition-duration, filter $transition-duration;
+    display: inline-block;
+}
+
+  &:hover li {
+    transform: rotate(45deg) translateY(-200px);
+    -webkit-transform: rotate(45deg) translateY(-200px);
+    -moz-transform: rotate(45deg) translateY(-200px);
+    -ms-transform: rotate(45deg) translateY(-200px);
+    -o-transform: rotate(45deg) translateY(-200px);
+    opacity: 0;
+    filter: blur(20px);
+    -webkit-filter: blur(20px);
+  }
+  @for $i from 1 through 10 {
+    li:nth-child(#{$i}) {
+      transition-delay: ($i - 1) * $delay-step;
+    }
+  }
+}
