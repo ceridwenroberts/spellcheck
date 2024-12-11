@@ -1,43 +1,51 @@
+// Fonts
+$lumos: "Lumos", sans-serif;
+$magicSchool: "MagicSchool", sans-serif;
+$aquilineTwo: "AquilineTwo", cursive;
 
-$lumos: 'Lumos', sans-serif;
-$magicSchool: 'MagicSchool', sans-serif;
-$aquilineTwo: 'AquilineTwo', cursive;
-
+// Colors
 $text_primary: #2e2727;
-$text_secondary:#3f2f2f;;
+$text_secondary: #3f2f2f;
 
 $bg-color: #ffe5db;
 $bg-color2: #ffe3da;
-$bg-clr-fade:#00000080;
-
+$bg-clr-fade: #00000080;
 
 $clr-no-link: #808080;
 
+// Star Colors
 $clr-star: #fafaae; //default
-$star-size: 9px;
 
-$clr_Blue: #0000FF;
-$clr_IcyBlue:#739BD0;
-$clr_Red: #FF0000;
+$clr_Blue: #0000ff;
+$clr_IcyBlue: #739bd0;
+$clr_Red: #ff0000;
 $clr_Gold: #d4af37;
 $clr_Purple: #800080;
-$clr_White: #FFFFFF;
+$clr_White: #ffffff;
 $clr_Green: #008000;
-$clr_Orange: #FFA500;
-$clr_Yellow: #FFFF00;
-$clr_BrightBlue: #0096FF;
-$clr_Pink: #FFC0CB;
-$clr_Violet: #EE82EE;
+$clr_Orange: #ffa500;
+$clr_Yellow: #ffff00;
+$clr_BrightBlue: #0096ff;
+$clr_Pink: #ffc0cb;
+$clr_Violet: #ee82ee;
 $clr_Scarlet: #ff2400;
 $clr_BlueishWhite: #dbe9f4;
-$clr_Silver:#c4c4c4;
+$clr_Silver: #c4c4c4;
 $clr_FieryScarlet: #d01c1f;
 $clr_Grey: #808080;
-$clr_DarkRed: #8B0000;
-$clr_Turquoise:#40e0d0;
-$clr_Fire: #AA4203;
-$clr_BrightYellow: #FFEA00;
+$clr_DarkRed: #8b0000;
+$clr_Turquoise: #40e0d0;
+$clr_Fire: #aa4203;
+$clr_BrightYellow: #ffea00;
 $clr_BlackSmoke: #100c08;
 $clr_PsychedelicTransparentWave: #a52a2a;
 $clr_None: #a52a2a;
 $clr_Transparent: #a52a2a;
+
+$star-size: 9px;
+
+//Animations
+$transition-duration: 2s;
+$transition-duration2: 3s;
+
+$delay-step: 0.4s;

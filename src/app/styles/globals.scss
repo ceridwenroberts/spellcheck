@@ -6,6 +6,7 @@
 @use "_Header";
 @use "_Navbar";
 @use "_SpellList";
+@use "_SpellCard";
 
 // $lumos: 'Lumos', sans-serif;
 // $magicSchool: 'MagicSchool', sans-serif;
@@ -161,32 +162,32 @@ body {
 //   }
 // }
 
-.modal {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  inset: 0;
-  z-index: 900;
-  background-color: #00000080;
-}
+// .modal {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   position: fixed;
+//   inset: 0;
+//   z-index: 900;
+//   background-color: #00000080;
+// }
 
-.modal-content {
-  background-color: white;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: #64646f4d 0px 7px 29px 0px;
-  max-width: 90%;
-  width: 400px; /* Adjust width as needed */
-  text-align: center;
-  z-index: 901;
-  transition: opacity 0.3s ease-in-out;
+// .modal__content {
+//   background-color: white;
+//   padding: 20px;
+//   border-radius: 12px;
+//   box-shadow: #64646f4d 0px 7px 29px 0px;
+//   max-width: 90%;
+//   width: 400px; /* Adjust width as needed */
+//   text-align: center;
+//   z-index: 901;
+//   transition: opacity 0.3s ease-in-out;
 
-  &.fade-in {
-    opacity: 1;
-    pointer-events: auto; /* Enable clicks when visible */
-  }
-}
+//   &.fade-in {
+//     opacity: 1;
+//     pointer-events: auto; /* Enable clicks when visible */
+//   }
+// }
 
 /* :root {
   --background: #ffffff;

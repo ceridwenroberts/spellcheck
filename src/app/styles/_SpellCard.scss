@@ -9,6 +9,13 @@
   z-index: 900;
   background-color: #00000080;
 
+  &--isClosing {
+     transition:    transform variables.$transition-duration2,    opacity variables.$transition-duration2,    filter variables.$transition-duration2;
+     opacity: 0;
+     filter: blur(20px);
+     -webkit-filter: blur(20px);
+}
+
   &__content {
     background-color: white;
     padding: 20px;
@@ -18,41 +25,13 @@
     width: 400px;
     /*Adjustwidthasneeded*/text-align: center;
     z-index: 901;
-    transition: opacity 0.3s ease-in-out;
-        &.fade-in {
-    -webkit-transition: opacity 0.3s ease-in-out;
-    -moz-transition: opacity 0.3s ease-in-out;
-    -ms-transition: opacity 0.3s ease-in-out;
-    -o-transition: opacity 0.3s ease-in-out;
+ 
+}
 
-      opacity: 1;
-      pointer-events: auto; /* Enable clicks when visible */
-    }
-  }
-
-  &__content--isClosing{
-      transition:
-    transform variables.$transition-duration,
-    opacity variables.$transition-duration,
-    filter variables.$transition-duration;
-  -webkit-transition:
-    transform variables.$transition-duration,
-    opacity variables.$transition-duration,
-    filter variables.$transition-duration;
-  -moz-transition:
-    transform variables.$transition-duration,
-    opacity variables.$transition-duration,
-    filter variables.$transition-duration;
-  -ms-transition:
-    transform variables.$transition-duration,
-    opacity variables.$transition-duration,
-    filter variables.$transition-duration;
-  -o-transition:
-    transform variables.$transition-duration,
-    opacity variables.$transition-duration,
-    filter variables.$transition-duration;
-  opacity: 0;
-  filter: blur(20px);
-  -webkit-filter: blur(20px);
-  }
+  &__content--isClosing {
+      transition:    transform variables.$transition-duration,    opacity variables.$transition-duration,    filter variables.$transition-duration;
+      opacity: 0;
+      filter: blur(20px);
+      -webkit-filter: blur(20px);
+}
 }

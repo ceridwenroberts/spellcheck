@@ -1,16 +1,17 @@
 import { Spell } from "@/contexts/SpellsContext"
+import { ComponentStyleProps } from "@/utils/types/ComponentStyleProps"
 
-interface SpellCardProps {
+interface SpellCardProps extends ComponentStyleProps {
     spell: Spell,
     onClose: () => void
 
 }
 
-const SpellCard: React.FC<SpellCardProps> = ({ spell, onClose }: SpellCardProps) => {
+const SpellCard: React.FC<SpellCardProps> = ({ spell, onClose, className }: SpellCardProps) => {
     console.log("spellcard")
     return (
-        <div className="modal">
-            <div className="modal-content">
+        <div className={`modal modal--${className}`}>
+            <div className={`modal__content modal__content--${className}`}>
                 <h2>{ spell.incantation }</h2>
                 { spell.name !== spell.incantation &&
                     <p>{ spell.name }</p>

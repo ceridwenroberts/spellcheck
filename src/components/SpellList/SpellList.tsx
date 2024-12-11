@@ -3,11 +3,13 @@
 import { useState } from "react";
 import { createPortal } from "react-dom"
 import { Spell, useSpells } from "@/contexts/SpellsContext";
+import { ComponentStyleProps } from "@/utils/types/ComponentStyleProps"
 import SpellCard from "@/components/SpellCard/SpellCard"
 
 interface ModalHandlers {
     openModal: (spell: Spell) => void,
-    closeModal: () => void
+    closeModal: () => void,
+
 }
 
 const SpellList = () => {
@@ -16,6 +18,7 @@ const SpellList = () => {
     //   console.log("spellsByLetter", spellsByLetter);
     const [showModal, setShowModal] = useState<boolean>(false);
     const [selectedSpell, setSelectedSpell] = useState<Spell | null>();
+    const [isClosing, setIsClosing] = useState<boolean>(false);
 
     const handleModalOpen: ModalHandlers["openModal"] = (spell) => {
         console.log("modalopen click")
@@ -29,10 +32,14 @@ const SpellList = () => {
     };
 
     const handleModalClose: ModalHandlers["closeModal"] = () => {
-        setSelectedSpell(null);
-        setShowModal(false);
+        setIsClosing(true);
+        setTimeout(() => {
+            setSelectedSpell(null);
+            setShowModal(false);
+            setIsClosing(false);
+        }, (2000));
+     
     }
-
     return (
         <>
         <div className="spell-list">
@@ -43,7 +50,7 @@ const SpellList = () => {
                         <div key={ letter } id={ letter } className="spellList__initialContainer">
                             <h3>{ letter }</h3>
                             { Array.isArray(spellsByLetter[letter]) && spellsByLetter[letter].map((spell: Spell) => (
-                                <div className="spellList__incantationContainer" key={ spell.id } onClick={ () => handleModalOpen(spell) }>
+                                <div className="spellList__incantationContainer" key={ spell.id } onClick={ ():void => handleModalOpen(spell) }>
                                     <p>{ spell.incantation }</p>
                                 </div>
                             )) }
@@ -54,8 +61,7 @@ const SpellList = () => {
                 { showModal &&
                     selectedSpell &&
                     createPortal(
-
-                        <SpellCard onClose={ handleModalClose } spell={ selectedSpell } />, document.body
+                        <SpellCard className={ isClosing ? "isClosing" : "isOpen" } onClose={ handleModalClose } spell={ selectedSpell } />, document.body
                     )
                 }
             </div>

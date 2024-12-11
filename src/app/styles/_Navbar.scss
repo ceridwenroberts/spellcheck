@@ -15,6 +15,7 @@
 
   &__navItem {
     &:not([href]) {
+      cursor: auto;
       // color: variables.$clr-no-link;
       // outline: auto;
     } // text-align: right;
@@ -30,7 +31,7 @@
 
     &_noLink {
       // color: variables.$clr-no-link;
-      cursor: not-allowed;
+      cursor: default;
       pointer-events: none;
       opacity: 0.5;
     }

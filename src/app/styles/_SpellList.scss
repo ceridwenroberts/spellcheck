@@ -1,16 +1,33 @@
+@use "_variables" as variables;
+
 .spellList {
   &__initialContainer {
-    padding: 48px;
-    // position: relative;
-    display: flex;
-    flex-direction: column;
-
-    & h3 {
+        transition: transform variables.$transition-duration, opacity variables.$transition-duration, filter variables.$transition-duration;
+        -webkit-transition: transform variables.$transition-duration, opacity variables.$transition-duration, filter variables.$transition-duration;
+        -moz-transition: transform variables.$transition-duration, opacity variables.$transition-duration, filter variables.$transition-duration;
+        -ms-transition: transform variables.$transition-duration, opacity variables.$transition-duration, filter variables.$transition-duration;
+        -o-transition: transform variables.$transition-duration, opacity variables.$transition-duration, filter variables.$transition-duration;
+        padding: 48px;
+        //position: relative;
+        display: flex;
+        flex-direction: column;
+        & h3
+{
       font-family: var(--font-aquilinetwo);
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       font-size: 48px;
     }
+  //     &:hover {
+  //   transform: rotate(45deg) translateY(-200px);
+  //   -webkit-transform: rotate(45deg) translateY(-200px);
+  //   -moz-transform: rotate(45deg) translateY(-200px);
+  //   -ms-transform: rotate(45deg) translateY(-200px);
+  //   -o-transform: rotate(45deg) translateY(-200px);
+  //   opacity: 0;
+  //   filter: blur(20px);
+  //   -webkit-filter: blur(20px);
+  // }
   }
 
   &__incantationContainer {
@@ -18,6 +35,8 @@
 
     & p {
       display: inline-block;
+      cursor: pointer;
+
     }
   }
 }
