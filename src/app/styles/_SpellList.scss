@@ -1,123 +1,51 @@
-@use "_variables" as variables;
+@use "_variables" as *;
+@use "_mixins" as *;
 
 .spellList {
-
   &__lexicoContainer {
-      padding: 48px;
-      // padding-left: 15vw;
-      padding-top: 56;
+    padding: 48px;
+
+    @include small-landscape {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      padding-top: 60px;
+    }
   }
   &__incantationContainer {
-    transition:
-      transform variables.$transition-duration,
-      opacity variables.$transition-duration,
-      filter variables.$transition-duration;
-    -webkit-transition:
-      transform variables.$transition-duration,
-      opacity variables.$transition-duration,
-      filter variables.$transition-duration;
-    -moz-transition:
-      transform variables.$transition-duration,
-      opacity variables.$transition-duration,
-      filter variables.$transition-duration;
-    -ms-transition:
-      transform variables.$transition-duration,
-      opacity variables.$transition-duration,
-      filter variables.$transition-duration;
-    -o-transition:
-      transform variables.$transition-duration,
-      opacity variables.$transition-duration,
-      filter variables.$transition-duration;
-  
-    //position: relative;
+    @include transition($transition-duration);
+
     display: flex;
     flex-direction: column;
 
-    
-    //     &:hover {
-    //   transform: rotate(45deg) translateY(-200px);
-    //   -webkit-transform: rotate(45deg) translateY(-200px);
-    //   -moz-transform: rotate(45deg) translateY(-200px);
-    //   -ms-transform: rotate(45deg) translateY(-200px);
-    //   -o-transform: rotate(45deg) translateY(-200px);
-    //   opacity: 0;
-    //   filter: blur(20px);
-    //   -webkit-filter: blur(20px);
-    // }
-  }
+    @include small-landscape {
+      padding-left: 5vh;
 
-  &__initial {
-    & h3 {
-      font-family: var(--font-aquilinetwo);
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      font-size: 48px;
+      &_L,
+      &_H {
+        padding-left: 32px;
+      }
     }
   }
 
   &__incantation {
-    display: inline;
-       padding-left: 36px;
+    @include small-landscape {
+      display: inline;
+      padding-left: 36px;
 
-
-    & p {
-      display: inline-block;
-      cursor: pointer;
-    }
-  }
-}
-
-
-// @media (orientation: portrait) {
-//   .page {
-//     max-width: 500px;
-
-//   }
-// }
-
-
-@media (orientation: landscape) and (max-height: 700) and (max-width: 700px) {
-  .page__header {
-    padding-top: 19vh;
-    height: 100vh;
-    background-color: blue;
-  }
-  .spellList {
-    &__lexicoContainer {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    // gap: 36px;
-     padding-left: 17vw;
-  padding-top: 135px;
- 
-   &__incantationContainer {
-    padding-left: 5vh;
-
-    &_L {
-      padding-left: 32px;
-    }
-    &_H {
-      padding-left: 32px;
-    }
-    
-   }
- 
-  }
-     &__initial {
-      & h3 {
-  line-height: 0.6;
+      & p {
+        display: inline-block;
+        cursor: pointer;
       }
-
-    
     }
   }
- 
-}
+  &__initial h3 {
+    font-family: $aquilineTwo;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 48px;
 
-@media (orientation: portrait) {
-
-  .page {
-    max-width: 700px;
+    @include small-landscape {
+      line-height: 0.6;
+    }
   }
 }
-

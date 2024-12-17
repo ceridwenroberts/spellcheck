@@ -1,4 +1,3 @@
-
 button,
 input[type="button"],
 input[type="submit"] {
@@ -19,12 +18,12 @@ input[type="submit"] {
   -moz-appearance: none; // Cross-browser compatibility
   box-shadow: none; // Removes any default shadow
 
-&:focus {
-  outline: none; // Prevent default focus outline
-}
+  &:focus {
+    outline: none; // Prevent default focus outline
+  }
 
-&:disabled {
-  cursor: not-allowed; // Shows a disabled cursor
-  opacity: 0.6; // Gives visual feedback for disabled state
-}
+  &:disabled {
+    cursor: not-allowed; // Shows a disabled cursor
+    opacity: 0.6; // Gives visual feedback for disabled state
+  }
 }

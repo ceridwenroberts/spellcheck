@@ -1,92 +1,77 @@
-@use "variables";
+@use "variables" as *;
 @use "mixins" as *;
 
 .page {
-container-name: page-container;
-container-type: block-size;
+  background-color: $bg-color2;
   display: grid;
-  grid-template-columns: 1fr auto;
   grid-template-areas: "scrollWrapper navbar";
-  // max-width: 560px;
-  max-width: 560px;
+  grid-template-columns: 1fr auto;
+  height: 100vh;
   margin: 0 auto;
-  height: 100vh;
-  background-color: variables.$bg-color2;
 
+  @media (orientation: portrait) {
+    max-width: 700px;
+  }
 
-.page__scrollWrapper {
-// overflow-y: auto;
-height: 100vh;
+  @include medium-landscape {
+    max-width: 700px;
+  }
 
-}
-}
+  @include small-landscape {
+    padding-right: 1vw;
+  }
 
-.page__scrollWrapper {
-  grid-area: scrollWrapper;
-  display: grid;
-  grid: auto 1f auto;
-  grid-template-areas:
-    "header"
-    "main"
-    "footer";
-  justify-self: stretch;
-  overflow-y: auto;
-  height: 100vh;
+  &__scrollWrapper {
+    display: grid;
+    grid-area: scrollWrapper;
+    grid: auto 1f auto;
+    grid-template-areas:
+      "header"
+      "main"
+      "footer";
+    -ms-overflow-style: none;
+    height: 100vh;
     justify-content: space-around;
+    justify-self: stretch;
+    overflow-y: auto;
+    scrollbar-width: none;
 
-   -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none; 
+    & ::webkit-scrollbar {
+      display: none;
+    }
+  }
 
-  & ::webkit-scrollbar {
-  display: none;
-}
-}
+  &__header {
+    grid-area: header;
+    overflow: visible;
+  }
 
-.page__header {
-  grid-area: header;
-  overflow: visible;
-}
+  &__nav {
+    grid-area: navbar;
+    position: sticky;
+    height: 100vh;
+    top: 0;
+  }
 
-.page__nav {
-  grid-area: navbar;
-  position: sticky;
-  height: 100vh;
-  top: 0;
-}
+  &__main {
+    grid-area: main;
+  }
 
-.page__main {
-  grid-area: main;
-  // max-width: 1100px;
-}
-
-.page__footer {
-  grid-area: footer;
-  padding: 32px;
-  justify-self: stretch;
-}
-
-
-
-@media (orientation: landscape) and (max-height: 640), (max-height: 640px) {
-  .page {
-    width: 100%;
+  &__footer {
+    grid-area: footer;
+    padding: 32px;
+    justify-self: stretch;
   }
 }
-    
-    
-     @media (orientation: landscape) and (min-width: 800px) {
-      .page {
-      }
-     .page__scrollWrapper {
-          // max-width: 700px;
-          align-self: center;
 
-        }
-      }
+@media (orientation: landscape) and (min-width: 700px) {
+  .page__scrollWrapper {
+    align-self: center;
+  }
+}
 
-      // @media (orientation: portrait) and (min-height) {
-      //   .page {
-      //     max-width: 600px;
-      //   }
-      // }
-
+@media (orientation: portrait) {
+  .page {
+    max-width: 700px;
+  }
+}

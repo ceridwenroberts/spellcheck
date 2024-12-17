@@ -1,3 +1,5 @@
+@use "_variables" as *;
+
 @mixin reset-button-styles {
   button,
   input[type="button"],
@@ -22,7 +24,6 @@
     &:focus {
       outline: none; // Prevent default focus outline
     }
-
     &:disabled {
       cursor: not-allowed; // Shows a disabled cursor
       opacity: 0.6; // Gives visual feedback for disabled state
@@ -49,59 +50,78 @@
   }
 }
 
-@mixin xs {
-   @media (max-width: 575px) {
+@mixin remove-scroll-bar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+
+  &::-webkit-scrollbar {
+    /* Chrome, Safari, and Edge (new) */
+    display: none;
+  }
+}
+
+//Animations
+@mixin transition($duration: 0.3s) {
+  transition: all $duration ease-in-out;
+}
+
+@mixin fade-close-transition($duration) {
+  transition:
+    transform $duration,
+    opacity $duration,
+    filter $duration ease-in-out;
+  opacity: 0;
+  filter: blur(20px);
+}
+
+//Media query mixins for landscape mode
+@mixin small-landscape {
+  @media (orientation: landscape) and (max-width: 700px),
+    (orientation: landscape) and (max-height: 700px) {
     @content;
   }
 }
 
-@mixin sm {
-  @media (min-width: 576px) {
+@mixin small-landscape-wide {
+  @media (orientation: landscape) and (max-height: 700px) {
     @content;
   }
 }
 
-@mixin md {
-  @media (min-width: 768px) {
+@mixin medium-landscape {
+  @media (orientation: landscape) and (min-width: 701px),
+    (orientation: landscape) and (min-height: 700px) {
     @content;
   }
 }
 
-@mixin lg {
-  @media (min-width: 992px) {
+@mixin gridnav-layout-condition {
+  @media (orientation: landscape) and (max-height: 700px) {
     @content;
   }
 }
 
-@mixin xl {
-  @media (min-width: 1200px) {
-    @content;
-  }
-}
-
-@mixin xxl {
-  @media (min-width: 1400px) {
-    @content;
-  }
-}
-
+//Components
 @mixin gridnav {
   .nav {
+    // align-content: space-evenly;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     max-height: 100vh;
     padding: max(3vh, 2px);
-      gap: 0.5vh;
-       &__navItem {       
-        aspect-ratio: 1;
-        align-content: center;
-        justify-content: center;  
-        // outline: auto;   
-      }
-       &__navBtn { 
-          height: 100%;
-          width:auto;
-        }
-
+    gap: 0.5vh;
+    &__navItem {
+      aspect-ratio: 1;
+      align-content: center;
+      justify-content: center;
+    }
+    &__navBtn {
+      height: 100%;
+      width: auto;
+    }
   }
+}
+
+@mixin nav-btn-padding($paddingY: 2px, $paddingX: 5vw) {
+  padding: max($paddingY, 0.5vw) min(16px, $paddingX);
 }

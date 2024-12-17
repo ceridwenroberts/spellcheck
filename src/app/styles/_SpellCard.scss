@@ -1,41 +1,31 @@
-@use "_variables" as variables;
+@use "_variables" as *;
+@use "_mixins" as *;
 
 .modal {
-  display: flex;
-  justify-content: center;
   align-items: center;
-  position: fixed;
+  background-color: $bg-color-fade;
+  display: flex;
   inset: 0;
+  justify-content: center;
+  position: fixed;
   z-index: 900;
-  background-color: #00000080;
 
   &--isClosing {
-     transition:    transform variables.$transition-duration2,    opacity variables.$transition-duration2,    filter variables.$transition-duration2;
-     opacity: 0;
-     filter: blur(20px);
-     -webkit-filter: blur(20px);
-     -webkit-transition:    transform variables.$transition-duration2,    opacity variables.$transition-duration2,    filter variables.$transition-duration2;
-     -moz-transition:    transform variables.$transition-duration2,    opacity variables.$transition-duration2,    filter variables.$transition-duration2;
-     -ms-transition:    transform variables.$transition-duration2,    opacity variables.$transition-duration2,    filter variables.$transition-duration2;
-     -o-transition:    transform variables.$transition-duration2,    opacity variables.$transition-duration2,    filter variables.$transition-duration2;
-}
+    @include fade-close-transition($transition-duration);
+  }
 
   &__content {
-    background-color: white;
-    padding: 20px;
+    background-color: $card-clr;
     border-radius: 12px;
     box-shadow: #64646f4d 0px 7px 29px 0px;
     max-width: 90%;
+    padding: 20px;
+    text-align: center;
     width: 400px;
-    /*Adjustwidthasneeded*/text-align: center;
     z-index: 901;
- 
-}
+  }
 
   &__content--isClosing {
-      transition:    transform variables.$transition-duration,    opacity variables.$transition-duration,    filter variables.$transition-duration;
-      opacity: 0;
-      filter: blur(20px);
-      -webkit-filter: blur(20px);
-}
+    @include fade-close-transition($transition-duration2);
+  }
 }

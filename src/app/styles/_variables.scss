@@ -6,16 +6,16 @@ $aquilineTwo: "AquilineTwo", cursive;
 // Colors
 $text_primary: #2e2727;
 $text_secondary: #3f2f2f;
+$clr-no-link: #808080;
 
 $bg-color: #ffe5db;
 $bg-color2: #ffe3da;
-$bg-clr-fade: #00000080;
+$bg-color-fade: #00000080;
 
-$clr-no-link: #808080;
+$card-clr: #fff;
 
 // Star Colors
 $clr-star: #fafaae; //default
-
 $clr_Blue: #0000ff;
 $clr_IcyBlue: #739bd0;
 $clr_Red: #ff0000;
@@ -47,8 +47,9 @@ $star-size: 9px;
 //Animations
 $transition-duration: 2s;
 $transition-duration2: 3s;
-
 $delay-step: 0.4s;
 
+//Breakpoints
 $viewport-height-threshold: 900px;
-$horizontal-threshold: 1.10;
+$horizontal-threshold: 1.1;
+$breakpoint-landscape: 700px;
