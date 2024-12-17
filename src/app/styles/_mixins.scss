@@ -48,3 +48,60 @@
     }
   }
 }
+
+@mixin xs {
+   @media (max-width: 575px) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media (min-width: 576px) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: 992px) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin xxl {
+  @media (min-width: 1400px) {
+    @content;
+  }
+}
+
+@mixin gridnav {
+  .nav {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-height: 100vh;
+    padding: max(3vh, 2px);
+      gap: 0.5vh;
+       &__navItem {       
+        aspect-ratio: 1;
+        align-content: center;
+        justify-content: center;  
+        // outline: auto;   
+      }
+       &__navBtn { 
+          height: 100%;
+          width:auto;
+        }
+
+  }
+}

@@ -3,7 +3,7 @@
 import { useRef } from 'react';
 // import Link from 'next/link'
 import { useSpells } from "@/contexts/SpellsContext"
-import {ComponentStyleProps} from "@/utils/types/ComponentStyleProps"
+import { ComponentStyleProps } from "@/utils/types/ComponentStyleProps"
 
 const Navbar = ({className}: ComponentStyleProps) => {
     const { spellsByLetter } = useSpells();

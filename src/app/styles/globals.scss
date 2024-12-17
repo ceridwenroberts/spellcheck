@@ -1,4 +1,5 @@
 @use "variables" as variables;
+@use "mixins" as *;
 @use "_reset_basic";
 @use "_reset_anchorlinks";
 @use "_reset_buttons";
