@@ -10,13 +10,13 @@ const magicSchool = localFont({
 });
 
 const aquilineTwo = localFont({
-  src: "./fonts/aquilineTwo.woff",
+  src: "./fonts/AquilineTwo.woff",
   variable: "--font-aquilinetwo",
   weight: "400",
 });
 
 const lumos = localFont({
-  src: "./fonts/lumos.woff",
+  src: "./fonts/Lumos.woff",
   variable: "--font-lumos",
   weight: "400",
 });
