@@ -5,19 +5,19 @@ import { SpellsProvider } from "@/contexts/SpellsContext";
 import "./styles/globals.scss";
 
 const magicSchool = localFont({
-  src: "/fonts/MagicSchool.woff",
+  src: "@/fonts/MagicSchool.woff",
   variable: "--font-magicschool",
   weight: "400",
 });
 
 const aquilineTwo = localFont({
-  src: "/fonts/aquilineTwo.woff",
+  src: "@/fonts/aquilineTwo.woff",
   variable: "--font-aquilinetwo",
   weight: "400",
 });
 
 const lumos = localFont({
-  src: "/fonts/lumos.woff",
+  src: "@/fonts/lumos.woff",
   variable: "--font-lumos",
   weight: "400",
 });
